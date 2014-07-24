@@ -13,6 +13,8 @@
 #endif
 #include "gason.h"
 
+using namespace gason;
+
 struct {
 	bool f;
 	const char *s;

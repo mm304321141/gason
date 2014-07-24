@@ -13,6 +13,8 @@
 #include "sajson/include/sajson.h"
 #include "rapidjson/include/rapidjson/document.h"
 
+using namespace gason;
+
 double traverse_gason(JsonValue o)
 {
 	double x = 0;

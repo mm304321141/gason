@@ -8,6 +8,8 @@
 #endif
 #include "gason.h"
 
+using namespace gason;
+
 const int SHIFT_WIDTH = 4;
 
 void dumpString(const char *s) {
@@ -78,7 +80,7 @@ void dumpValue(JsonValue o, int indent = 0) {
 		fprintf(stdout, "{\n");
 		for (auto i : o) {
 			fprintf(stdout, "%*s", indent + SHIFT_WIDTH, "");
-			dumpString(i->key);
+			dumpString(static_cast<JsonObjectNode const *>(i)->key);
 			fprintf(stdout, ": ");
 			dumpValue(i->value, indent + SHIFT_WIDTH);
 			fprintf(stdout, i->next ? ",\n" : "\n");
